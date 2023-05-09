@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ea90f3e377fb2459def84e935c4a36, type: 3}
+  m_Name: Cure Poison
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: 3dd13644a1c1abf4a88880f460393124, type: 3}
+  itemName: Cure Poison
+  maxItemAmount: 10
+  currentItemAmount: 5
+  itemModel: {fileID: 819607226296224821, guid: a00c1ce2220ad8b49815b6885ce18a19, type: 3}
+  consumeAnimation: Drink
+  isInteracting: 0
+  cureConsumeFX: {fileID: 2781961766045297343, guid: a2c99dcbdedc15b42b8da6cfefcf472a, type: 3}
+  curePoison: 1
