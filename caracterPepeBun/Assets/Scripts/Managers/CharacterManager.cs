@@ -54,7 +54,10 @@ public class CharacterManager : MonoBehaviour
     }
 
     protected virtual void FixedUpdate() {
-        characterAnimatorManager.CheckHandIKWeight(characterWeaponSlotManager.rightHandIKTarget, characterWeaponSlotManager.leftHandIKTarget, isTwoHandingWeapon);
+        if (characterAnimatorManager != null)
+        {
+            characterAnimatorManager.CheckHandIKWeight(characterWeaponSlotManager.rightHandIKTarget, characterWeaponSlotManager.leftHandIKTarget, isTwoHandingWeapon);
+        }
     }
 
     // Update is called once per frame

@@ -16,7 +16,8 @@ public class WeaponFX : MonoBehaviour
 
     public void PlayWeaponFX()
     {
-        normalWeaponTrail.Stop();
+        //normalWeaponTrail.Stop(); // remove comment after test
+
         if(normalWeaponTrail.isStopped)
         {
             normalWeaponTrail.Play();

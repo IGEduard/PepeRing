@@ -30,10 +30,12 @@ public class EnemyBossManager : MonoBehaviour
     public void SetBossHealthBar(int currentHealth, int maxHealth){
         bossHealthBar.SetBossCurrentHealth(currentHealth);
 
+        /*
         if (currentHealth <= maxHealth / 2 && !bossCombatStanceState.hasPhaseShifted){
             bossCombatStanceState.hasPhaseShifted = true;
             ShiftToSecondPhase();
         }
+        */
     }
 
     public void ShiftToSecondPhase(){

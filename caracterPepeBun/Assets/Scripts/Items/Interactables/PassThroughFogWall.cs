@@ -14,7 +14,7 @@ public class PassThroughFogWall : Interactable
     {
         base.Interact(playerManager);
         playerManager.PassThroughFogWallInteraction(transform);
-        worldEventManager.ActivateBossFight();
+        worldEventManager.ActivateBossFight(name);
     }
     // Start is called before the first frame update
     void Start()

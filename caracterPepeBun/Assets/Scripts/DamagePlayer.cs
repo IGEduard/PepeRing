@@ -4,13 +4,30 @@ using UnityEngine;
 
 public class DamagePlayer : MonoBehaviour
 {
-    public int physicalDamage = 25;
+    public int physicalDamage = 0;
     public int fireDamage = 25;
+    public int timeAmount = 3;
+    float timer = 0;
     private void OnTriggerEnter(Collider other) {
-        PlayerStatsManager playerStats = other.GetComponent<PlayerStatsManager>();
+        //PlayerStatsManager playerStats = other.GetComponent<PlayerStatsManager>();
+        CharacterStatsManager characterStatsManager = other.GetComponent<CharacterStatsManager>();
 
-        if(playerStats != null){
-            playerStats.TakeDamage(physicalDamage, fireDamage);
+        if(characterStatsManager != null){
+            characterStatsManager.TakeDamage(physicalDamage, fireDamage);
+        }
+    }
+    private void OnTriggerStay(Collider other) {
+        
+        CharacterStatsManager characterStatsManager = other.GetComponent<CharacterStatsManager>();
+        if(characterStatsManager != null){
+            if (characterStatsManager.isDead){
+                return;
+            }
+            timer += Time.deltaTime;
+            if(timer >= timeAmount){
+                characterStatsManager.TakeDamage(physicalDamage, (int)(fireDamage/5));
+                timer = 0;
+            }
         }
     }
     // Start is called before the first frame update

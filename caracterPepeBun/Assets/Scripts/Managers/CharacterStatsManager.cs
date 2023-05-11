@@ -53,7 +53,8 @@ public class CharacterStatsManager : MonoBehaviour
             return;
         }
 
-        characterAnimatorManager.EraseHandIKForWeapon();
+
+        //characterAnimatorManager.EraseHandIKForWeapon(); // maybe solve this error for new boss
 
         /*float totalPhysicalDamageAbsorption = 1 - 
             (1 - physicalDamageAbsorptionHead / 100) *

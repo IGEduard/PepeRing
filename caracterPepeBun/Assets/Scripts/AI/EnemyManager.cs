@@ -41,7 +41,11 @@ public class EnemyManager : CharacterManager
         enemyRigidBody = GetComponent<Rigidbody>();
         navMeshAgent = GetComponentInChildren<NavMeshAgent>();
         backStabCollider = GetComponent<CriticalDamageCollider>();
-        navMeshAgent.enabled = false;
+        if (navMeshAgent != null)
+        {
+            navMeshAgent.enabled = false;
+        }
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -53,27 +57,41 @@ public class EnemyManager : CharacterManager
     void Update()
     {
         HandleRecoveryTimer();
-        HandleStateMachine();
 
-        isUsingLeftHand = enemyAnimatorManager.animator.GetBool("isUsingLeftHand");
-        isUsingRightHand = enemyAnimatorManager.animator.GetBool("isUsingRightHand");
-        isRotatingWithRootMotion = enemyAnimatorManager.animator.GetBool("isRotatingWithRootMotion");
-        isInteracting = enemyAnimatorManager.animator.GetBool("isInteracting");
-        isPhaseShifting = enemyAnimatorManager.animator.GetBool("isPhaseShifting");
-        isInvulnerable = enemyAnimatorManager.animator.GetBool("isInvulnerable");
-        canDoCombo = enemyAnimatorManager.animator.GetBool("canDoCombo");
-        canRotate = enemyAnimatorManager.animator.GetBool("canRotate");
-        enemyAnimatorManager.animator.SetBool("isDead", enemyStatsManager.isDead);
+        if(navMeshAgent != null){
+            HandleStateMachine();
+        }
+
+        if (enemyAnimatorManager != null)
+        {
+            isUsingLeftHand = enemyAnimatorManager.animator.GetBool("isUsingLeftHand");
+            isUsingRightHand = enemyAnimatorManager.animator.GetBool("isUsingRightHand");
+            isRotatingWithRootMotion = enemyAnimatorManager.animator.GetBool("isRotatingWithRootMotion");
+            isInteracting = enemyAnimatorManager.animator.GetBool("isInteracting");
+            isPhaseShifting = enemyAnimatorManager.animator.GetBool("isPhaseShifting");
+            isInvulnerable = enemyAnimatorManager.animator.GetBool("isInvulnerable");
+            canDoCombo = enemyAnimatorManager.animator.GetBool("canDoCombo");
+            canRotate = enemyAnimatorManager.animator.GetBool("canRotate");
+            enemyAnimatorManager.animator.SetBool("isDead", enemyStatsManager.isDead);
+        }
+        
     }
 
     protected override void FixedUpdate() {
-        enemyEffectsManager.HandleAllBuildUpEffects();
+        if (enemyEffectsManager != null)
+        {
+            enemyEffectsManager.HandleAllBuildUpEffects();
+        }
+        
     }
 
     private void LateUpdate()
     {
-        navMeshAgent.transform.localPosition = Vector3.zero;
-        navMeshAgent.transform.localRotation = Quaternion.identity;
+        if (navMeshAgent != null)
+        {
+            navMeshAgent.transform.localPosition = Vector3.zero;
+            navMeshAgent.transform.localRotation = Quaternion.identity;
+        }
     }
 
     private void HandleStateMachine()

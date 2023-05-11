@@ -15,6 +15,6 @@ MonoBehaviour:
   itemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   itemName: Pepe's Leggings
   physicalDefense: 15
-  hipModelName: Leggings_3
-  leftLegModelName: LeftLeg_3
-  rightLegModelName: RightLeg_3
+  hipModelName: Leggings_Naked
+  leftLegModelName: LeftLeg_Naked
+  rightLegModelName: RightLeg_Naked

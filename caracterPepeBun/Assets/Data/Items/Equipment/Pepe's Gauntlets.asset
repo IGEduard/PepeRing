@@ -15,5 +15,5 @@ MonoBehaviour:
   itemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   itemName: Pepe's Gauntlets
   physicalDefense: 10
-  leftHandModelName: LeftHand_3
-  rightHandModelName: RightHand_3
+  leftHandModelName: LeftHand_Naked
+  rightHandModelName: RightHand_Naked

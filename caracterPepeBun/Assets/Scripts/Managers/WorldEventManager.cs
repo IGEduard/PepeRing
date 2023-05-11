@@ -20,14 +20,16 @@ public class WorldEventManager : MonoBehaviour
         
     }
 
-    public void ActivateBossFight(){
+    public void ActivateBossFight(string fogWallName){
         bossFightIsActive = true;
         bossHasBeenAwakened = true;
         bossHealthBar.SetUIHealthBarToActive();
 
         foreach (var fogWall in fogWalls)
         {
-            fogWall.ActivateFogWall();
+            if(fogWall.name == fogWallName){
+                fogWall.ActivateFogWall();
+            }
         }
     }
 

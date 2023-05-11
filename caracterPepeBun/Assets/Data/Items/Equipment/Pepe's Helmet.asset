@@ -15,4 +15,4 @@ MonoBehaviour:
   itemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   itemName: Pepe's Helmet
   physicalDefense: 10
-  helmetModelName: Helmet_3
+  helmetModelName: Helmet_Naked
