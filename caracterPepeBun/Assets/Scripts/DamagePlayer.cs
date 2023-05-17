@@ -12,14 +12,14 @@ public class DamagePlayer : MonoBehaviour
         //PlayerStatsManager playerStats = other.GetComponent<PlayerStatsManager>();
         CharacterStatsManager characterStatsManager = other.GetComponent<CharacterStatsManager>();
 
-        if(characterStatsManager != null){
+        if(characterStatsManager != null && characterStatsManager.teamIDNumber == 0){
             characterStatsManager.TakeDamage(physicalDamage, fireDamage);
         }
     }
     private void OnTriggerStay(Collider other) {
         
         CharacterStatsManager characterStatsManager = other.GetComponent<CharacterStatsManager>();
-        if(characterStatsManager != null){
+        if(characterStatsManager != null && characterStatsManager.teamIDNumber == 0){
             if (characterStatsManager.isDead){
                 return;
             }

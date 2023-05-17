@@ -287,6 +287,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                 playerAnimatorManager.PlayTargetAnimation("Jump", false);
                 playerAnimatorManager.EraseHandIKForWeapon();
                 moveDirection.y = 0;
+                //rigidbody.AddForce(0, 100, 0, ForceMode.Acceleration);
                 playerStatsManager.TakeStaminaDamage(jumpStaminaCost);
                 //Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
                 //myTransform.rotation = jumpRotation;
